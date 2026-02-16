@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger  = document.getElementById('burger');
   const nav     = document.getElementById('nav');
   const heroBg  = document.getElementById('heroBg');
-  const form    = document.getElementById('contactForm');
   const links   = document.querySelectorAll('.header__link');
 
   /* ---------- STICKY HEADER ---------- */
@@ -102,24 +101,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   sections.forEach(s => navObserver.observe(s));
-
-  /* ---------- FORM HANDLER ---------- */
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-
-      btn.textContent = 'Sent!';
-      btn.disabled = true;
-      btn.style.background = 'var(--green-light)';
-
-      setTimeout(() => {
-        form.reset();
-        btn.textContent = originalText;
-        btn.disabled = false;
-        btn.style.background = '';
-      }, 2500);
-    });
-  }
 });
