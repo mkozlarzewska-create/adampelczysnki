@@ -389,13 +389,15 @@ ul { list-style: none; }
 .offer__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
+  max-width: 1260px;
+  margin: 0 auto;
 }
 .offer__card {
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.1);
   border-radius: var(--radius);
-  padding: 2.5rem 2rem;
+  padding: 2.25rem 1.7rem;
   text-align: center;
   transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
   position: relative;
@@ -456,9 +458,10 @@ ul { list-style: none; }
   margin: 0 auto 3rem;
 }
 .contact__icons {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 860px;
   margin: 0 auto;
 }
 .contact__icon-item {
@@ -468,10 +471,17 @@ ul { list-style: none; }
   gap: 1rem;
   text-decoration: none;
   color: var(--text);
-  transition: transform var(--transition);
+  background: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  min-height: 260px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 .contact__icon-item:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(11, 27, 58, 0.12);
+  border-color: rgba(31, 59, 115, .35);
 }
 .contact__icon-item:hover .contact__circle {
   background: #0a1a3a;
@@ -499,7 +509,7 @@ ul { list-style: none; }
   color: var(--text);
 }
 .contact__desc {
-  max-width: 280px;
+  max-width: 320px;
   text-align: center;
   color: var(--text-light);
   font-size: .95rem;
@@ -583,6 +593,14 @@ ul { list-style: none; }
 /* ========================================
    RESPONSIVE
    ======================================== */
+@media (max-width: 1200px) {
+  .offer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 960px) {
   .about__grid {
     grid-template-columns: 1fr;
@@ -599,8 +617,7 @@ ul { list-style: none; }
     margin: 0 auto;
   }
   .offer__grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 860px;
+    max-width: 840px;
     margin: 0 auto;
   }
 }
@@ -654,6 +671,11 @@ ul { list-style: none; }
   .offer__grid {
     grid-template-columns: 1fr;
     max-width: 440px;
+  }
+
+  .contact__icons {
+    grid-template-columns: 1fr;
+    max-width: 460px;
   }
 }
 
