@@ -193,7 +193,7 @@ ul { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url('IMG_4095.webp') center / cover no-repeat;
+  background: url('main_photo.webp') center / cover no-repeat;
   will-change: transform;
   transform: translateZ(0);
   transition: none;
